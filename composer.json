@@ -1,0 +1,42 @@
+{
+  "name": "mikelgoig/codeception-openapi",
+  "description": "Codeception module for contract testing with OpenAPI.",
+  "license": "MIT",
+  "type": "library",
+  "version": "1.0.0",
+  "keywords": [
+    "codeception",
+    "contract-testing",
+    "dev",
+    "gherkin",
+    "openapi",
+    "rest",
+    "symfony",
+    "testing"
+  ],
+  "authors": [
+    {
+      "name": "Mikel Goig",
+      "email": "m@mikelgoig.com"
+    }
+  ],
+  "require": {
+    "php": "8.3.*",
+    "codeception/codeception": "^5.1",
+    "codeception/module-rest": "^3.4",
+    "codeception/module-symfony": "^3.5",
+    "guzzlehttp/psr7": "^2.7",
+    "league/openapi-psr7-validator": "^0.22.0",
+    "symfony/browser-kit": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "MikelGoig\\Codeception\\Module\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  }
+}

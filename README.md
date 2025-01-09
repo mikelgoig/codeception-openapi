@@ -14,6 +14,10 @@ Created by <a href="https://mikelgoig.com">Mikel Goig</a>.
 
 ---
 
+[![Latest Stable Version](http://poser.pugx.org/mikelgoig/codeception-openapi/v)](https://packagist.org/packages/mikelgoig/codeception-openapi)
+[![Total Downloads](http://poser.pugx.org/mikelgoig/codeception-openapi/downloads)](https://packagist.org/packages/mikelgoig/codeception-openapi)
+[![PHP Version Require](http://poser.pugx.org/mikelgoig/codeception-openapi/require/php)](https://packagist.org/packages/mikelgoig/codeception-openapi)
+
 **This Codeception module provides you with actions to validate API requests and responses with
 an [OpenAPI](https://openapis.org) Specification.**
 

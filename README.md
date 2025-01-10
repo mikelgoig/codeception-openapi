@@ -45,7 +45,6 @@ It supports [Gherkin format](https://codeception.com/docs/BDD).
             depends: [ REST, Symfony ]
             openapi: path/to/openapi.yaml
             multipart_boundary: foo
-            part: gherkin
     ```
 
     * `openapi` - the path of the OpenAPI file

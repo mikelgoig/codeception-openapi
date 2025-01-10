@@ -23,12 +23,12 @@ use Symfony\Component\BrowserKit\Response;
 
 class OpenApi extends Module implements DependsOnModule, PartedModule
 {
-    private RestModule $restModule;
-    private SymfonyModule $symfonyModule;
-    private string $openapiFile;
-    private ?string $multipartBoundary;
-    private string $errorMessage = '';
-    private string $dependencyMessage = <<<EOF
+    protected RestModule $restModule;
+    protected SymfonyModule $symfonyModule;
+    protected string $openapiFile;
+    protected ?string $multipartBoundary;
+    protected string $errorMessage = '';
+    protected string $dependencyMessage = <<<EOF
 Example configuring module:
 --
 modules:

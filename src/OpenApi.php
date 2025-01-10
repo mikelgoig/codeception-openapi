@@ -76,6 +76,18 @@ EOF;
     }
 
     /**
+     * Checks that a response matches the OpenAPI specification.
+     */
+    public function seeResponseMatchesOpenApiSpecification(): void
+    {
+        $this->assertTrue($this->validateResponse(), $this->errorMessage);
+    }
+
+    #--------------------------------------------------------------------------
+    # Gherkin Steps
+    #--------------------------------------------------------------------------
+
+    /**
      * @Then /^I see that request matches the OpenAPI specification$/
      *
      * @part gherkin
@@ -83,14 +95,6 @@ EOF;
     public function stepSeeRequestMatchesOpenApiSpecification(): void
     {
         $this->seeRequestMatchesOpenApiSpecification();
-    }
-
-    /**
-     * Checks that a response matches the OpenAPI specification.
-     */
-    public function seeResponseMatchesOpenApiSpecification(): void
-    {
-        $this->assertTrue($this->validateResponse(), $this->errorMessage);
     }
 
     /**
@@ -102,6 +106,8 @@ EOF;
     {
         $this->seeResponseMatchesOpenApiSpecification();
     }
+
+    #--------------------------------------------------------------------------
 
     protected function validateRequest(): bool
     {

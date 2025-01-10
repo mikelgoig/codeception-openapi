@@ -91,6 +91,7 @@ EOF;
      * @Then /^I see that request matches the OpenAPI specification$/
      *
      * @part gherkin
+     * @see self::seeRequestMatchesOpenApiSpecification()
      */
     public function stepSeeRequestMatchesOpenApiSpecification(): void
     {
@@ -101,6 +102,7 @@ EOF;
      * @Then /^I see that response matches the OpenAPI specification$/
      *
      * @part gherkin
+     * @see self::seeResponseMatchesOpenApiSpecification()
      */
     public function stepSeeResponseMatchesOpenApiSpecification(): void
     {

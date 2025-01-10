@@ -69,6 +69,8 @@ EOF;
 
     /**
      * Checks that a request matches the OpenAPI specification.
+     *
+     * @part gherkin
      */
     public function seeRequestMatchesOpenApiSpecification(): void
     {
@@ -77,6 +79,8 @@ EOF;
 
     /**
      * Checks that a response matches the OpenAPI specification.
+     *
+     * @part gherkin
      */
     public function seeResponseMatchesOpenApiSpecification(): void
     {

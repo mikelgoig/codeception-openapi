@@ -3,7 +3,7 @@
     "description": "Codeception module for contract testing with OpenAPI.",
     "license": "MIT",
     "type": "library",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "keywords": [
         "codeception",
         "contract-testing",

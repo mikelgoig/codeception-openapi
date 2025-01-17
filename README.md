@@ -14,9 +14,9 @@ Created by <a href="https://mikelgoig.com">Mikel Goig</a>.
 
 ---
 
-![Packagist Version](https://img.shields.io/packagist/v/mikelgoig/codeception-openapi)
-![Packagist Downloads](https://img.shields.io/packagist/dt/mikelgoig/codeception-openapi)
-![Packagist PHP Version](https://img.shields.io/packagist/dependency-v/mikelgoig/codeception-openapi/php)
+[![Packagist Version](https://img.shields.io/packagist/v/mikelgoig/codeception-openapi)](https://packagist.org/packages/mikelgoig/codeception-openapi)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/mikelgoig/codeception-openapi)](https://packagist.org/packages/mikelgoig/codeception-openapi/stats)
+[![Packagist PHP Version](https://img.shields.io/packagist/dependency-v/mikelgoig/codeception-openapi/php)](https://thephp.foundation)
 
 **This Codeception module provides you with actions to validate API requests and responses with
 an [OpenAPI](https://openapis.org) Specification.**

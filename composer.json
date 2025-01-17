@@ -30,7 +30,10 @@
         "symfony/browser-kit": "^7.2"
     },
     "require-dev": {
+        "captainhook/captainhook-phar": "^5.24",
+        "captainhook/hook-installer": "^1.0",
         "mikelgoig/easy-coding-standard-rules": "^1.0",
+        "ramsey/conventional-commits": "^1.5",
         "symplify/easy-coding-standard": "^12.5"
     },
     "autoload": {
@@ -41,10 +44,14 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
+        "allow-plugins": {
+            "captainhook/captainhook-phar": true,
+            "captainhook/hook-installer": true
+        },
         "sort-packages": true
     },
     "scripts": {
-        "check-cs": "vendor/bin/ecs check --ansi",
-        "fix-cs": "vendor/bin/ecs check --fix --ansi"
+        "ecs": "vendor/bin/ecs check --ansi",
+        "ecs-fix": "vendor/bin/ecs check --fix --ansi"
     }
 }

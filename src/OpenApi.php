@@ -218,7 +218,11 @@ EOF;
     protected function pathPattern(RequestInterface $request): string
     {
         $path = $request->getUri()->getPath();
-        return preg_replace('/\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/', '/{id}', $path) ?? $path;
+        return preg_replace(
+            '/\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/',
+            '/{id}',
+            $path,
+        ) ?? $path;
     }
 
     private function setErrorMessage(ValidationFailed $exception): void

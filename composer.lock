@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c49870dd895f36327256bacb4e7aa8ce",
+    "content-hash": "9f84ff52ff8b619e80987c2cff573baf",
     "packages": [
         {
             "name": "behat/gherkin",
@@ -4943,7 +4943,118 @@
             "time": "2022-06-03T18:03:27+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "mikelgoig/easy-coding-standard-rules",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikelgoig/easy-coding-standard-rules.git",
+                "reference": "6cef6d80ee6fb86d6be34cb9088fda808e05e54f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikelgoig/easy-coding-standard-rules/zipball/6cef6d80ee6fb86d6be34cb9088fda808e05e54f",
+                "reference": "6cef6d80ee6fb86d6be34cb9088fda808e05e54f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "8.3.*",
+                "symplify/easy-coding-standard": "^12.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MikelGoig\\EasyCodingStandard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikel Goig",
+                    "email": "m@mikelgoig.com"
+                }
+            ],
+            "description": "Easy Coding Standard rules.",
+            "keywords": [
+                "ECS",
+                "code-style",
+                "coding-standard",
+                "dev",
+                "easy-coding-standard",
+                "linting",
+                "static-analysis"
+            ],
+            "support": {
+                "source": "https://github.com/mikelgoig/easy-coding-standard-rules/tree/v1.0.1"
+            },
+            "time": "2025-01-17T12:02:32+00:00"
+        },
+        {
+            "name": "symplify/easy-coding-standard",
+            "version": "12.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-coding-standard/easy-coding-standard.git",
+                "reference": "16a6ac7f452e230fdcc81f1b35b2366903fcecf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easy-coding-standard/easy-coding-standard/zipball/16a6ac7f452e230fdcc81f1b35b2366903fcecf3",
+                "reference": "16a6ac7f452e230fdcc81f1b35b2366903fcecf3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "conflict": {
+                "friendsofphp/php-cs-fixer": "<3.46",
+                "phpcsstandards/php_codesniffer": "<3.8",
+                "symplify/coding-standard": "<12.1"
+            },
+            "suggest": {
+                "ext-dom": "Needed to support checkstyle output format in class CheckstyleOutputFormatter"
+            },
+            "bin": [
+                "bin/ecs"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Use Coding Standard with 0-knowledge of PHP-CS-Fixer and PHP_CodeSniffer",
+            "keywords": [
+                "Code style",
+                "automation",
+                "fixer",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/easy-coding-standard/easy-coding-standard/issues",
+                "source": "https://github.com/easy-coding-standard/easy-coding-standard/tree/12.5.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/rectorphp",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-02T08:43:03+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {},

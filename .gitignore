@@ -1,7 +1,12 @@
 ###> jetbrains ###
-/.idea
+.idea/
 ###< jetbrains ###
 
 ###> package ###
+var/
 vendor/
 ###< package ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###

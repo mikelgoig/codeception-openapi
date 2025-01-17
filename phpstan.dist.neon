@@ -1,0 +1,11 @@
+parameters:
+    level: max
+    paths:
+        - src
+    tmpDir: var/cache/phpstan
+    editorUrlTitle: '%%file%%:%%line%%'
+    stubFiles:
+        - stubs/Codeception/Lib/Interfaces/DependsOnModule.stub
+        - stubs/Codeception/Lib/Interfaces/PartedModule.stub
+        - stubs/Codeception/Module.stub
+        - stubs/Symfony/Component/BrowserKit/Response.stub

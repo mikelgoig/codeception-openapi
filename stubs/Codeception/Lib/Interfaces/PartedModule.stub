@@ -1,0 +1,11 @@
+<?php
+
+namespace Codeception\Lib\Interfaces;
+
+interface PartedModule
+{
+    /**
+     * @return list<string>
+     */
+    public function _parts(): array;
+}

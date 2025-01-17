@@ -20,9 +20,15 @@ use League\OpenAPIValidation\PSR7\ValidatorBuilder;
 use Psr\Http\Message\RequestInterface;
 use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\BrowserKit\Response;
+use Webmozart\Assert\Assert;
 
 class OpenApi extends Module implements DependsOnModule, PartedModule
 {
+    protected array $config = [
+        'openapi' => null,
+        'multipart_boundary' => null,
+    ];
+
     protected RestModule $restModule;
     protected SymfonyModule $symfonyModule;
     protected string $openapiFile;
@@ -39,9 +45,6 @@ modules:
 --
 EOF;
 
-    /**
-     * @return array<class-string, string>
-     */
     public function _depends(): array
     {
         return [
@@ -63,8 +66,10 @@ EOF;
 
     public function _initialize(): void
     {
+        Assert::string($this->config['openapi']);
         $this->openapiFile = $this->config['openapi'];
-        $this->multipartBoundary = $this->config['multipart_boundary'] ?? null;
+        Assert::nullOrString($this->config['multipart_boundary']);
+        $this->multipartBoundary = $this->config['multipart_boundary'];
     }
 
     /**
@@ -136,7 +141,14 @@ EOF;
         $internalRequest = $this->request();
         $method = $internalRequest->getMethod();
         $uri = $internalRequest->getUri();
-        $headers = $this->symfonyModule->client->getRequest()->headers->all();
+        $request = $this->symfonyModule->client?->getRequest();
+        \assert($request instanceof \Symfony\Component\HttpFoundation\Request);
+
+        // Transform headers to meet Guzzle's requirements
+        $headers = array_map(
+            fn (array $values) => array_filter($values, fn ($value) => $value !== null), // Remove nulls
+            $request->headers->all(),
+        );
 
         if ($this->isRequestMultipart()) {
             $multipartData = [];
@@ -151,7 +163,7 @@ EOF;
 
             // Add files
             foreach ($internalRequest->getFiles() as $name => $file) {
-                if (is_array($file) && isset($file['tmp_name'])) {
+                if (is_array($file) && isset($file['tmp_name']) && is_string($file['tmp_name'])) {
                     $multipartData[] = [
                         'name' => $name,
                         'contents' => fopen($file['tmp_name'], 'r'),
@@ -177,7 +189,10 @@ EOF;
 
     protected function isRequestMultipart(): bool
     {
-        return $this->symfonyModule->client->getRequest()->headers->contains('content-type', 'multipart/form-data');
+        return $this->symfonyModule->client?->getRequest()->headers->contains(
+            'content-type',
+            'multipart/form-data',
+        ) ?? false;
     }
 
     protected function validateResponse(): bool

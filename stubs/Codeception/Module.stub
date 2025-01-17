@@ -1,0 +1,9 @@
+<?php
+
+namespace Codeception;
+
+abstract class Module
+{
+    /** @var array<string, mixed> */
+    protected array $config = [];
+}

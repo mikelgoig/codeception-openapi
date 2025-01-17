@@ -27,12 +27,20 @@
         "codeception/module-symfony": "^3.5",
         "guzzlehttp/psr7": "^2.7",
         "league/openapi-psr7-validator": "^0.22.0",
-        "symfony/browser-kit": "^7.2"
+        "symfony/browser-kit": "^7.2",
+        "symfony/http-foundation": "^7.2",
+        "symfony/http-kernel": "^7.2",
+        "webmozart/assert": "^1.11"
     },
     "require-dev": {
         "captainhook/captainhook-phar": "^5.24",
         "captainhook/hook-installer": "^1.0",
         "mikelgoig/easy-coding-standard-rules": "^1.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpstan/phpstan-webmozart-assert": "^2.0",
         "ramsey/conventional-commits": "^1.5",
         "symplify/easy-coding-standard": "^12.5"
     },
@@ -46,12 +54,16 @@
     "config": {
         "allow-plugins": {
             "captainhook/captainhook-phar": true,
-            "captainhook/hook-installer": true
+            "captainhook/hook-installer": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
-    "scripts": {
-        "ecs": "vendor/bin/ecs check --ansi",
-        "ecs-fix": "vendor/bin/ecs check --fix --ansi"
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
+        }
     }
 }

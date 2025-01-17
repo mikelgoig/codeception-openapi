@@ -1,0 +1,13 @@
+<?php
+
+namespace Codeception\Lib\Interfaces;
+
+use Codeception\Module;
+
+interface DependsOnModule
+{
+    /**
+     * @return array<class-string<Module>, string>
+     */
+    public function _depends(): array;
+}

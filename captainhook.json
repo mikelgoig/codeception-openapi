@@ -11,7 +11,10 @@
     "enabled": true,
     "actions": [
       {
-        "action": "composer ecs"
+        "action": "make phpstan"
+      },
+      {
+        "action": "make ecs"
       }
     ]
   }
